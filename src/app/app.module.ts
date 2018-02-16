@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { HeaderService } from '../app/services/header.service';
 import { ListService } from '../app/services/list.service';
+import { ComunicatorService } from '../app/services/comunicator.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ListService } from '../app/services/list.service';
   imports: [
     BrowserModule
   ],
-  providers: [HeaderService, ListService],
+  providers: [HeaderService, ListService, ComunicatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

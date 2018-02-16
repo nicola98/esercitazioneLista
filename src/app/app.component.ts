@@ -9,10 +9,16 @@ import { HeaderService } from '../app/services/header.service';
 })
 export class AppComponent {
   currentSection = MenuEnum.Home;
+  gameIdSelected: number=0;
 
   constructor(private headerService: HeaderService){
     this.headerService.sectionSelected$.subscribe(id=>{
       this.currentSection = id;
     });
+  }
+
+  showDetail(id: number){
+    this.gameIdSelected = id;
+    this.currentSection = 'detail';
   }
 }
