@@ -1,3 +1,9 @@
-<p>
-  list works!
-</p>
+<div *ngFor="let item of items; let i=index" (click)="si(item)">
+    <div>id: {{item.id}}</div>
+    <div>name: {{item.name}}</div>
+    <div>descrizione: {{item.descrizione}}</div>
+    <div>genere: {{item.id}}</div>
+    <div>rating: {{item.name}}</div>
+    <div>prezzo: {{item.descrizione}}</div>
+    <div *ngIf="i!=items.length-1">-------------------</div>
+</div>
