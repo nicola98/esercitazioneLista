@@ -16,6 +16,7 @@ import { DemoRouterModule } from './router/router.module';
 import { LoginComponent } from './components/login/login.component'
 import { AuthGuard } from './services/AuthGuard.service';
 import { AuthService } from './services/AuthService';
+import { LoggierService } from './services/loggier.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AuthService } from './services/AuthService';
     FormsModule,
     DemoRouterModule
   ],
-  providers: [HeaderService, ListService, ComunicatorService, AuthGuard, AuthService],
+  providers: [HeaderService, ListService, ComunicatorService, AuthGuard, AuthService, LoggierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
