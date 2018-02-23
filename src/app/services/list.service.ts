@@ -12,11 +12,13 @@ export class ListService{
         return this.items;
     }
 
-    getGameById(id: number){
+    getGameById(id: number): GameItem
+    {
         for(let item of this.items){
             if(item.id == id){
                 return item;
             }
         }
+        return null;
     }
 }

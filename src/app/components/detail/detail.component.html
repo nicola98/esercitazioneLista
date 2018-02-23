@@ -1,9 +1,11 @@
 <div>
-    <div>id: {{game?.id}}</div>
-    <div>name: {{game?.name}}</div>
-    <div>descrizione: {{game?.descrizione}}</div>
-    <div>genere: {{game?.genere}}</div>
-    <div>rating: {{game?.rating}}</div>
-    <div>prezzo: {{game?.prezzo}}</div>
-    <div>anno uscita: {{game?.dataUscita}}</div>
+    <div>id: {{giocoCorrente?.id}}</div>
+    <div>name: {{giocoCorrente?.name}}</div>
+    <div>descrizione: {{giocoCorrente?.descrizione}}</div>
+    <div>genere: {{giocoCorrente?.genere}}</div>
+    <div>rating: {{giocoCorrente?.rating}}</div>
+    <div>prezzo: {{giocoCorrente?.prezzo}}</div>
+    <div>anno uscita: {{giocoCorrente?.dataUscita}}</div>
 </div>
+
+<button (click)="torna()">indietro</button>

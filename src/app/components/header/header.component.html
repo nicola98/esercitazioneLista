@@ -1,3 +1,5 @@
 <div class="header">
-    <div *ngFor="let item of menuItems" (click)="selectSection(item.id)" [class.selected]="item.selected">{{item.description}}</div>
+    <div routerLink="/home" routerLinkActive="selected">home</div>
+    <div routerLink="/list" routerLinkActive="selected">lista</div>
+    <div routerLink="/edit" routerLinkActive="selected">modifica</div>
 </div>

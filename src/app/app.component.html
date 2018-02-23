@@ -1,7 +1,2 @@
 <app-header></app-header>
-<div [ngSwitch]="currentSection">
-    <app-home *ngSwitchCase="'home'"></app-home>
-    <app-list *ngSwitchCase="'list'" (open)="showDetail($event)"> </app-list>
-    <app-edit *ngSwitchCase="'edit'"></app-edit>
-    <app-detail *ngSwitchCase="'detail'" [fiiiiiiiiii]="gameIdSelected"></app-detail>
-</div>
+<router-outlet></router-outlet>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { ListComponent } from './components/list/list.component';
 import { HeaderService } from '../app/services/header.service';
 import { ListService } from '../app/services/list.service';
 import { ComunicatorService } from '../app/services/comunicator.service';
-
+import { DemoRouterModule } from './router/router.module';
+import { LoginComponent } from './components/login/login.component'
 
 @NgModule({
   declarations: [
@@ -20,10 +22,13 @@ import { ComunicatorService } from '../app/services/comunicator.service';
     EditComponent,
     HeaderComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    DemoRouterModule
   ],
   providers: [HeaderService, ListService, ComunicatorService],
   bootstrap: [AppComponent]

@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameItem } from '../../GameItem';
 import { ListService } from '../../services/list.service';
-import { ComunicatorService } from '../../services/comunicator.service';
-import { HeaderService } from '../../services/header.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -10,18 +9,20 @@ import { HeaderService } from '../../services/header.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  @Output() open: EventEmitter <number> = new EventEmitter();
+  items: GameItem [];
 
-  items: GameItem []=[];
-
-  constructor()
+  constructor(private router: Router, private listService: ListService)
   {
-    let servicePerLista: ListService=new ListService();
-    this.items = servicePerLista.getCharactersList();
+
   }
 
-  si(id: number){
-    this.open.emit(id);
+  ngOnInit() {
+    this.items = this.listService.getCharactersList();
+  }
+
+  si(item: GameItem)
+  {
+      this.router.navigate(['/detail/'+item.id]);
   }
   
 }
