@@ -14,6 +14,8 @@ import { ListService } from '../app/services/list.service';
 import { ComunicatorService } from '../app/services/comunicator.service';
 import { DemoRouterModule } from './router/router.module';
 import { LoginComponent } from './components/login/login.component'
+import { AuthGuard } from './services/AuthGuard.service';
+import { AuthService } from './services/AuthService';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { LoginComponent } from './components/login/login.component'
     FormsModule,
     DemoRouterModule
   ],
-  providers: [HeaderService, ListService, ComunicatorService],
+  providers: [HeaderService, ListService, ComunicatorService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

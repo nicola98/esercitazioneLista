@@ -5,13 +5,15 @@ import { ListComponent } from '../components/list/list.component';
 import { EditComponent } from '../components/edit/edit.component';
 import { DetailComponent } from '../components/detail/detail.component';
 import { LoginComponent } from '../components/login/login.component';
+import { AuthGuard } from '../services/AuthGuard.service';
+import { AuthService } from '../services/AuthService';
 
 const listRoutes: Routes = [
   {path: "login", component: LoginComponent},
-  {path: "home", component: HomeComponent},
-  {path: "list", component: ListComponent},
-  {path: "edit", component: EditComponent},
-  {path: "detail/:id", component: DetailComponent},
+  {path: "home", component: HomeComponent, canActivate: [AuthGuard]},
+  {path: "list", component: ListComponent, canActivate: [AuthGuard]},
+  {path: "edit", component: EditComponent, canActivate: [AuthGuard]},
+  {path: "detail/:id", component: DetailComponent, canActivate: [AuthGuard]},
   {path: "", redirectTo: "login", pathMatch: "full"},
 ];
 
@@ -22,6 +24,10 @@ const listRoutes: Routes = [
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    AuthGuard,
+    AuthService
   ]
 })
 export class DemoRouterModule { }
