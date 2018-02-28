@@ -25,10 +25,6 @@ const listRoutes: Routes = [
   ],
   exports: [
     RouterModule
-  ],
-  providers: [
-    AuthGuard,
-    AuthService
   ]
 })
 export class DemoRouterModule { }
