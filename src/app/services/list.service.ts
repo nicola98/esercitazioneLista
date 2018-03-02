@@ -16,9 +16,45 @@ export class ListService{
     {
         for(let item of this.items){
             if(item.id == id){
-                return item;
+                return item.clone();
             }
         }
         return null;
+    }
+
+    getGameByName(name: string): GameItem
+    {
+        if(name){
+            for(let item of this.items){
+                if(item.name.toLowerCase() == name.toLowerCase()){
+                    return item.clone();
+                }
+            }
+        }
+        return null;
+    }
+
+    changeGame(gameItem: GameItem){
+        for(let item of this.items){
+            if(item.id == gameItem.id){
+                item.name = gameItem.name;
+                item.annoUscita = gameItem.annoUscita;
+                item.descrizione = gameItem.descrizione;
+                item.genere = gameItem.genere;
+                item.prezzo = gameItem.prezzo;
+                item.rating = gameItem.rating;
+            }
+        }
+    }
+
+    checkModification(gameItem: GameItem){
+       for(let item of this.items){
+             if(item.id == gameItem.id){
+                if(item.name==gameItem.name&&item.genere==gameItem.genere&&item.annoUscita==gameItem.annoUscita&&item.descrizione==gameItem.descrizione&&item.prezzo==gameItem.prezzo&&item.rating==gameItem.rating)
+                    return false;
+                return true;
+            }
+         } 
+        return false;
     }
 }

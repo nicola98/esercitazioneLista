@@ -1,12 +1,17 @@
 import { Injectable }     from '@angular/core';
-import { CanActivate }    from '@angular/router';
+import { CanActivate, CanDeactivate }    from '@angular/router';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router/src/router_state';
 import { ListComponent } from '../components/list/list.component';
 import { Router } from '@angular/router';
 import { AuthService } from './AuthService';
+import { EditComponent } from '../components/edit/edit.component';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanDeactivate<EditComponent> {
+  canDeactivate(component: EditComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+    return !component.hasChanges;
+  }
 
   constructor(private authService: AuthService, private router: Router) {}
 

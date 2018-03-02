@@ -1,17 +1,13 @@
 <div>
     <input type="text" placeholder="cerca" [(ngModel)]="inputValue" />
     <button (click)="cerca()">Cerca</button>
-    <div *ngIf="trovato">
+    <div *ngIf="currentGame">
 
         ID: {{currentGame?.id}}<br> titolo: <input placeholder="titolo" id="nome" [(ngModel)]="currentGame.name" /><br> descrizione: <input placeholder="descrizione" id="descrizione" [(ngModel)]="currentGame.descrizione" /><br> genere: <input placeholder="genere"
             id="genere" [(ngModel)]="currentGame.genere" /><br> rating: <input placeholder="rating" type="number" id="rating" [(ngModel)]="currentGame.rating" /><br> prezzo: <input type="number" placeholder="prezzo" id="prezzo" [(ngModel)]="currentGame.prezzo"
         /><br> anno:
         <input type="number" placeholder="anno" id="anno" [(ngModel)]="currentGame.annoUscita" /><br>
-        <button (click)="modifica(nome.text, descrizione.text, genere.text, rating.text, prezzo.text, anno.text)">Modifica</button>
+        <button (click)="modifica()">Modifica</button>
 
     </div>
-    <div *ngIf="errore">
-        errore non esiste il gioco da lei cercato
-    </div>
-
 </div>

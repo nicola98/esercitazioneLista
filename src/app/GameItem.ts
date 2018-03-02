@@ -16,4 +16,8 @@ export class GameItem{
         this.prezzo =prezzo; 
         this.annoUscita =annoUscita; 
     }
+
+    clone(){
+        return new GameItem(this.id, this.name, this.descrizione, this.genere, this.rating, this.prezzo, this.annoUscita);
+    }
 }

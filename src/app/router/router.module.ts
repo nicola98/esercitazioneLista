@@ -13,7 +13,7 @@ const listRoutes: Routes = [
   {path: "login", component: LoginComponent, canActivate: [LoggierService]},
   {path: "home", component: HomeComponent, canActivate: [AuthGuard]},
   {path: "list", component: ListComponent, canActivate: [AuthGuard]},
-  {path: "edit", component: EditComponent, canActivate: [AuthGuard]},
+  {path: "edit", component: EditComponent, canActivate: [AuthGuard], canDeactivate: [AuthGuard]},
   {path: "detail/:id", component: DetailComponent, canActivate: [AuthGuard]},
   {path: "", redirectTo: "login", pathMatch: "full"},
 ];
