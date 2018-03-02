@@ -27,7 +27,8 @@ export class LoginComponent {
     this.message = 'Logged in';
   }
  
-  login() {
+  login(user:string, password:string) {
+    if(user=="admin")
     this.message = 'Trying to log in ...';
     this.authService.login();
   }

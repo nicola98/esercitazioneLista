@@ -1,5 +1,6 @@
 <p>{{message}}</p>
 <p>
-
-    <button (click)="login()">Login</button>
+    <input placeholder="username" id="user" />
+    <input placeholder="password" id="password" />
+    <button (click)="login(user.text, password.text)">Login</button>
 </p>`
