@@ -3,6 +3,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
 import { GameItem } from '../../GameItem';
 import { ListService } from '../../services/list.service';
+import { NavigationStart } from '@angular/router/src/events';
 
 
 @Component({
@@ -18,8 +19,13 @@ export class EditComponent{
   currentGame: GameItem;
   currentId: string
   errore: boolean = false;
-  constructor(private listGames: ListService) {
+  constructor(private listGames: ListService, private router:Router) {
     this.games = listGames.getCharactersList();
+    router.events.subscribe(event => {
+      if(event instanceof NavigationStart) {
+        }
+        return false
+    });
   }
 
   cerca()
